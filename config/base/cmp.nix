@@ -82,7 +82,7 @@
 
               ["<c-space>"] = cmp.mapping(function(fallback)
                 local copk = require("copilot")
-                  
+
                 if copk then
                   vim.g.copilot_no_tab_map = true
                   vim.g.copilot_assume_mapped = true
@@ -98,8 +98,8 @@
               end,{ "i", "s" }),
             })
           '');
+      };
     };
   };
-};
 
 }
