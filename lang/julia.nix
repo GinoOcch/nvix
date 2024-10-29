@@ -3,21 +3,12 @@
   pkgs,
   ...
 }: {
-  extraPackages = with pkgs; [
-    (
-      julia.withPackages
-      [
-        "DataFrames"
-        "CSV"
-      ]
-    )
-  ];
-
   extraPlugins = [pkgs.vimPlugins.julia-vim];
   globals.latex_to_unicode_keymap = true;
 
   plugins = {
     lsp.servers.julials.enable = true;
+    lsp.servers.julials.package = pkgs.julia;
     julia-cell = {
       enable = true;
       settings.delimit_cells_by = "tags";
