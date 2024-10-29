@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   plugins = {
     lsp.servers.lua_ls.enable = true;
     conform-nvim.settings = {

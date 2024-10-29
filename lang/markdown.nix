@@ -4,6 +4,7 @@
   pkgs,
   specObj,
   helpers,
+  lib,
   ...
 }: {
   plugins = {
