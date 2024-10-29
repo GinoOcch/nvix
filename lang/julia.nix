@@ -3,6 +3,16 @@
   pkgs,
   ...
 }: {
+  home.packages = with pkgs; [
+    (
+      julia.withPackages
+      [
+        "DataFrames"
+        "CSV"
+      ]
+    )
+  ];
+
   extraPlugins = [pkgs.vimPlugins.julia-vim];
   globals.latex_to_unicode_keymap = true;
 
