@@ -1,5 +1,9 @@
-{ lib, pkgs, ... }:
-let formatter = [ "shellcheck" "shellharden" "shfmt" ];
+{
+  lib,
+  pkgs,
+  ...
+}: let
+  formatter = ["shellcheck" "shellharden" "shfmt"];
 in {
   plugins = {
     lsp.servers.bashls.enable = true;
@@ -10,9 +14,9 @@ in {
         zsh = formatter;
       };
       formatters = {
-        shellcheck = { command = lib.getExe pkgs.shellcheck; };
-        shfmt = { command = lib.getExe pkgs.shfmt; };
-        shellharden = { command = lib.getExe pkgs.shellharden; };
+        shellcheck = {command = lib.getExe pkgs.shellcheck;};
+        shfmt = {command = lib.getExe pkgs.shfmt;};
+        shellharden = {command = lib.getExe pkgs.shellharden;};
       };
     };
   };

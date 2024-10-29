@@ -1,4 +1,8 @@
-{lib, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   plugins.lsp.servers = {
     ruff.enable = true;
     pyright = {
