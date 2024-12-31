@@ -8,6 +8,17 @@
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
+
+    tokyodark = {
+      url = "github:tiagovla/tokyodark.nvim";
+      flake = false;
+    };
+
+    typr = {
+      url = "github:nvzone/typr";
+      flake = false;
+    };
+
     calendar = {
       url = "github:itchyny/calendar.vim";
       flake = false;
