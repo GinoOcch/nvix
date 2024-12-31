@@ -17,7 +17,7 @@ in {
   extraPlugins = [
     (mkPkgs "windows" inputs.windows)
     (mkPkgs "windows-mc" inputs.windows-mc)
-    #(mkPkgs "windows-a" inputs.windows-a)
+    (mkPkgs "windows-a" inputs.windows-a)
   ];
   plugins = {
     # TODO: add multicursor

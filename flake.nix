@@ -56,10 +56,10 @@
       url = "github:anuvyklack/middleclass";
       flake = false;
     };
-    #windows-a = {
-    #  url = "github:anuvyklack/animation.nvim";
-    #  flake = false;
-    #};
+    windows-a = {
+      url = "github:anuvyklack/animation.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {flake-parts, ...}:
