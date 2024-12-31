@@ -1,21 +1,25 @@
 # This file contains plugins that are basics or don't need their own file
-{ inputs, mkPkgs, mkKey, ... }:
-let inherit (mkKey) mkKeymap;
+{
+  inputs,
+  mkPkgs,
+  mkKey,
+  ...
+}: let
+  inherit (mkKey) mkKeymap;
 in {
   # Keeping this at top so that if any plugin is removed it's respective config can be removed
-  extraConfigLua = # lua
+  extraConfigLua =
+    # lua
     ''
       require("windows").setup()
     '';
-  keymaps =
-    [ (mkKeymap "n" "<c-w>=" "<cmd>WindowsEqualize<CR>" "Equalize windows") ];
+  keymaps = [(mkKeymap "n" "<c-w>=" "<cmd>WindowsEqualize<CR>" "Equalize windows")];
   extraPlugins = [
     (mkPkgs "windows" inputs.windows)
     (mkPkgs "windows-mc" inputs.windows-mc)
-    (mkPkgs "windows-a" inputs.windows-a)
+    #(mkPkgs "windows-a" inputs.windows-a)
   ];
   plugins = {
-
     # TODO: add multicursor
 
     neoscroll.enable = true;

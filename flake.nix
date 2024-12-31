@@ -8,7 +8,6 @@
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
-
     tokyodark = {
       url = "github:tiagovla/tokyodark.nvim";
       flake = false;
@@ -57,17 +56,16 @@
       url = "github:anuvyklack/middleclass";
       flake = false;
     };
-    windows-a = {
-      url = "github:anuvyklack/animation.nvim";
-      flake = false;
-    };
+    #windows-a = {
+    #  url = "github:anuvyklack/animation.nvim";
+    #  flake = false;
+    #};
   };
 
-  outputs = inputs@{ flake-parts, ... }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ ./pkgs ./variables ];
+  outputs = inputs @ {flake-parts, ...}:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = [./pkgs ./variables];
       debug = true;
-      systems =
-        [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
+      systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
     };
 }
